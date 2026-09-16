@@ -1,20 +1,20 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Bricolage_Grotesque, DM_Sans } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const bodyFont = DM_Sans({
+  variable: '--font-body',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const headingFont = Bricolage_Grotesque({
+  variable: '--font-display',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    'https://day-of-bliss-avatar-studio.ochre-ibis-4630.chatgpt.site',
+    'https://day-of-bliss-avatar-studio.dietitianfrancisca.chatgpt.site',
   ),
   title: 'Day of Bliss Avatar Studio',
   description:
@@ -39,9 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${bodyFont.variable} ${headingFont.variable} antialiased`}>
         {children}
       </body>
     </html>
